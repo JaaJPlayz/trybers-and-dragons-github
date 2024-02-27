@@ -3,6 +3,7 @@ import Energy from './Energy';
 import getRandomInt from './utils';
 import Race, { Elf } from './Races';
 import Archetype, { Mage } from './Archetypes';
+import SimpleFighter from './Fighter/SimpleFighter';
 
 class Character implements Fighter {
   private _race: Race;
@@ -76,7 +77,7 @@ class Character implements Fighter {
     return this._lifePoints;
   }
 
-  attack(enemy: Fighter): void {
+  attack(enemy: Fighter | SimpleFighter): void {
     enemy.receiveDamage(this._strength);
   }
 
@@ -92,7 +93,7 @@ class Character implements Fighter {
     this._lifePoints = this._maxLifePoints;
   }
 
-  special(enemy: Fighter): void {
+  special(enemy: Fighter | SimpleFighter): void {
     const damageBuff = (Math.random() + 2).toFixed(2);
     enemy.receiveDamage(this._strength * Number(damageBuff));
     console.log(`Critical Attack! ${damageBuff}x damage!`);
