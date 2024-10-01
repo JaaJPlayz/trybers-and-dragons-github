@@ -26,17 +26,34 @@ To get started with the project, follow these steps:
 
 ## 🎮 Usage
 
-To run the game, use the following command:
+To run the game, you have two options: using npm directly or through Docker.
+
+### Using npm
+
+To start the game, use:
 
 ```bash
 npm start
 ```
 
-For development purposes, you can use:
+For development purposes, you can run:
 
 ```bash
 npm run dev
 ```
+
+### Using Docker
+
+1. **Build and Run the Docker Container:**
+   ```bash
+   docker-compose up -d
+   ```
+
+2. **Access the Container:**
+   You can attach to the container with:
+   ```bash
+   docker exec -it trybers_and_dragons bash
+   ```
 
 ## 📋 Dependencies
 
